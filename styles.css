@@ -458,8 +458,8 @@ img {
 
 .profile-container {
   position: relative;
-  width: 280px;
-  height: 280px;
+  width: 360px;
+  height: 360px;
   margin-top: 40px;
 }
 
@@ -515,8 +515,8 @@ img {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 260px;
-  height: 260px;
+  width: 340px;
+  height: 340px;
   z-index: 1;
 }
 
@@ -690,8 +690,26 @@ img {
 }
 
 .about-card-icon {
-  font-size: 28px;
-  margin-bottom: 16px;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+  background: var(--bg-secondary);
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.about-card:hover .about-card-icon {
+  background: linear-gradient(135deg, var(--accent-blue), #2c6ad4);
+  color: #fff;
+  border-color: #2c6ad4;
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: var(--shadow-md);
 }
 
 .about-card h3 {
@@ -1082,8 +1100,26 @@ img {
 }
 
 .skill-group-icon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 24px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.skill-group:hover .skill-group-icon {
+  background: linear-gradient(135deg, var(--accent-blue), #2c6ad4);
+  color: #fff;
+  border-color: #2c6ad4;
+  transform: scale(1.15) rotate(-8deg);
+  box-shadow: var(--shadow-md);
 }
 
 .skill-group h3 {
@@ -1141,8 +1177,26 @@ img {
 }
 
 .cert-card-icon {
-  font-size: 32px;
-  margin-bottom: 16px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 20px;
+  background: var(--bg-secondary);
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cert-card:hover .cert-card-icon {
+  background: linear-gradient(135deg, var(--accent-yellow), #f5d97e);
+  color: #1a1a2e;
+  border-color: #f5d97e;
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(245, 217, 126, 0.3);
 }
 
 .cert-card h3 {
