@@ -1,0 +1,1327 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Engr. Abdul Wahab — Mechanical Design Engineer & Product Designer
+    </title>
+    <meta
+      name="description"
+      content="Portfolio of Engr. Abdul Wahab — Mechanical Design Engineer and Product Designer. Transforming concepts into production-ready designs with 2.0+ years experience in SolidWorks CAD modeling."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="assets/images/logo.jpg" />
+  </head>
+  <body>
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav">
+      <div class="nav-container">
+        <a href="#hero" class="nav-brand">
+          <img src="assets/images/logo.jpg" alt="Logo" class="nav-logo" />
+          Abdul Wahab
+        </a>
+
+        <div class="nav-links" id="navLinks">
+          <div class="nav-slide-indicator" id="navIndicator"></div>
+          <button class="nav-link active" data-section="hero">Home</button>
+          <button class="nav-link" data-section="about">About</button>
+          <button class="nav-link" data-section="projects">Projects</button>
+          <button class="nav-link" data-section="skills">Skills</button>
+          <button class="nav-link" data-section="certifications">Certs</button>
+          <button class="nav-link" data-section="resume">Resume</button>
+          <button class="nav-link" data-section="hobbies">Hobbies</button>
+          <button class="nav-link" data-section="contact">Contact</button>
+        </div>
+
+        <div class="nav-right">
+          <button
+            class="theme-toggle"
+            id="themeToggle"
+            aria-label="Toggle dark/light mode"
+          >
+            <span class="theme-toggle-icon sun">☀️</span>
+            <span class="theme-toggle-icon moon">🌙</span>
+          </button>
+          <button class="nav-hamburger" id="hamburgerBtn" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#hero" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#resume">Resume</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">⚙️ Ready to Help Turn Ideas into Reality</div>
+          <h1 class="hero-title">
+            Mechanical Design Engineer & Product Designer
+            <br /> AI Enthusiast
+          </h1>
+          <p class="hero-description">
+            Transforming Concepts into Production-Ready Designs — 2.0+ years of
+            hands-on experience specializing in SolidWorks-based CAD modeling,
+            3D part design, complex assemblies, and detailed manufacturing
+            drawings.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <svg
+                class="btn-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+              View Projects
+            </a>
+            <a
+              href="assets/files/abdul_wahab_cv1.pdf"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              <svg
+                class="btn-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download Resume
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="profile-container">
+            <img
+              src="assets/images/myprofile_picture.jpeg"
+              alt="Engr. Abdul Wahab"
+              class="profile-image"
+            />
+            <div class="profile-orbit">
+              <svg viewBox="0 0 400 400" fill="none">
+                <circle
+                  cx="200"
+                  cy="200"
+                  r="185"
+                  stroke="url(#orbitGrad)"
+                  stroke-width="1.5"
+                  stroke-dasharray="8 6"
+                  class="svg-animated-path"
+                />
+                <circle cx="200" cy="15" r="6" fill="#4285F4">
+                  <animateMotion
+                    dur="20s"
+                    repeatCount="indefinite"
+                    path="M200,200 m-185,0 a185,185 0 1,1 370,0 a185,185 0 1,1 -370,0"
+                  />
+                </circle>
+                <circle cx="200" cy="385" r="5" fill="#34A853">
+                  <animateMotion
+                    dur="25s"
+                    repeatCount="indefinite"
+                    path="M200,200 m-185,0 a185,185 0 1,1 370,0 a185,185 0 1,1 -370,0"
+                  />
+                </circle>
+                <circle cx="385" cy="200" r="4" fill="#FBBC05">
+                  <animateMotion
+                    dur="30s"
+                    repeatCount="indefinite"
+                    path="M200,200 m-185,0 a185,185 0 1,1 370,0 a185,185 0 1,1 -370,0"
+                  />
+                </circle>
+                <defs>
+                  <linearGradient
+                    id="orbitGrad"
+                    x1="0"
+                    y1="0"
+                    x2="400"
+                    y2="400"
+                  >
+                    <stop offset="0%" stop-color="#4285F4" stop-opacity="0.4" />
+                    <stop
+                      offset="50%"
+                      stop-color="#34A853"
+                      stop-opacity="0.4"
+                    />
+                    <stop
+                      offset="100%"
+                      stop-color="#FBBC05"
+                      stop-opacity="0.4"
+                    />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 20 Q300 0 600 20 T1200 20"
+          stroke="url(#divGrad1)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad1">
+            <stop offset="0%" stop-color="#4285F4" />
+            <stop offset="100%" stop-color="#34A853" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="section" id="stats">
+      <div class="stats-grid">
+        <div class="stat-card reveal">
+          <div class="stat-value">2.0+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-value">20+</div>
+          <div class="stat-label">Completed Projects</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-value">PEC</div>
+          <div class="stat-label">Registered Engineer</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-value">CSWA</div>
+          <div class="stat-label">SolidWorks Certified</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-4">
+          <div class="stat-value">🌍</div>
+          <div class="stat-label">International Clients</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 20 C200 40 400 0 600 20 S1000 40 1200 20"
+          stroke="url(#divGrad2)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad2">
+            <stop offset="0%" stop-color="#34A853" />
+            <stop offset="100%" stop-color="#FBBC05" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+      <div class="section-header reveal">
+        <div class="section-label">📖 About Me</div>
+        <h2 class="section-title">Professional Story</h2>
+        <p class="section-subtitle">
+          My design philosophy centers on creative problem-solving and adherence
+          to industry standards, with a relentless focus on accuracy,
+          manufacturability, and functional performance.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Education -->
+        <div class="about-card reveal">
+          <div class="about-card-icon">🎓</div>
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">Sep 2019 – Oct 2023</div>
+              <div class="timeline-title">B.Sc. Mechanical Engineering</div>
+              <div class="timeline-subtitle">
+                University of Engineering and Technology, Peshawar
+              </div>
+              <div class="timeline-desc">
+                <strong>FYP:</strong> Automated Water Dispenser Bottle
+                Installation Mechanism
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Sep 2017 – Jun 2018</div>
+              <div class="timeline-title">Pre-Engineering</div>
+              <div class="timeline-subtitle">
+                WENSAM College, Dera Ismail Khan
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="about-card reveal reveal-delay-1">
+          <div class="about-card-icon">⏳</div>
+          <h3>Professional Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">Aug 2025 – Present</div>
+              <div class="timeline-title">
+                Freelance Mechanical Design Engineer
+              </div>
+              <div class="timeline-subtitle">
+                Upwork — International Clients
+              </div>
+              <div class="timeline-desc">
+                3D CAD models, technical drawings, photorealistic renders for
+                prototyping and manufacturing. Designed components for consumer
+                products and industrial applications.
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag">SolidWorks</span>
+                <span class="skill-tag">3D CAD</span>
+                <span class="skill-tag">Rendering</span>
+                <span class="skill-tag">2D Drawing</span>
+                <span class="skill-tag">Prototyping</span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-date">Dec 2024 – Present</div>
+              <div class="timeline-title">
+                Self-Employed Mechanical Design Engineer
+              </div>
+              <div class="timeline-subtitle">
+                Industrial & Consumer Product Design
+              </div>
+              <div class="timeline-desc">
+                Designed precise 3D mechanical parts, assemblies, and production
+                drawings. Completed projects including Centrifugal Pumps, Heat
+                Exchangers, Parabolic Troughs, and Phone Casings.
+              </div>
+              <div class="skill-tags">
+                <span class="skill-tag">3D Modeling</span>
+                <span class="skill-tag">Rendering</span>
+                <span class="skill-tag">Industrial Design</span>
+                <span class="skill-tag">Consultation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- What I Offer -->
+        <div class="about-card reveal reveal-delay-3">
+          <div class="about-card-icon">🛠️</div>
+          <h3>What I Offer</h3>
+          <ul>
+            <li>3D CAD Modeling and Complex Assemblies</li>
+            <li>Manufacturing-Ready Technical Drawings (2D)</li>
+            <li>Product Design and Industrial Design Consultation</li>
+            <li>Photorealistic 3D Rendering</li>
+            <li>Prototyping Support</li>
+            <li>Material Selection and Manufacturing Process Optimization</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 30 Q200 0 400 20 T800 10 T1200 30"
+          stroke="url(#divGrad3)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad3">
+            <stop offset="0%" stop-color="#FBBC05" />
+            <stop offset="100%" stop-color="#EA4335" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Mechanical Projects Section -->
+    <section class="section" id="projects">
+      <div class="section-header reveal">
+        <div class="section-label">🔧 Engineering</div>
+        <h2 class="section-title">Mechanical Design Projects</h2>
+        <p class="section-subtitle">
+          From industrial machinery to consumer products — transforming concepts
+          into production-ready designs.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card reveal" onclick="openProjectModal('p1')">
+          <img
+            src="assets/images/projects/project_1/complete assembly.JPG"
+            alt="Flush-Driven Aerosol Mechanism"
+            class="project-card-thumb"
+          />
+          <div class="project-card-body">
+            <h3 class="project-card-title">
+              Universal Flush-Driven Aerosol Air Freshener Mechanism
+            </h3>
+            <p class="project-card-desc">
+              A fully mechanical, flush-actuated air freshener system operating
+              without electricity. Transfers flush lever motion using a flexible
+              shaft and spring-loaded actuator.
+            </p>
+            <button class="project-card-btn">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div
+          class="project-card reveal reveal-delay-1"
+          onclick="openProjectModal('p2')"
+        >
+          <img
+            src="assets/images/projects/project_2/1.jpeg"
+            alt="Mixture Machine"
+            class="project-card-thumb"
+          />
+          <div class="project-card-body">
+            <h3 class="project-card-title">Mixture Machine</h3>
+            <p class="project-card-desc">
+              A cordless, modular personal blender with USB-C charging and
+              easy-clean design. 5-piece quick-assembly architecture with
+              borosilicate glass vessel.
+            </p>
+            <button class="project-card-btn">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div
+          class="project-card reveal reveal-delay-2"
+          onclick="openProjectModal('p3')"
+        >
+          <img
+            src="assets/images/projects/project_3/1.PNG"
+            alt="CLI Toothbrush"
+            class="project-card-thumb"
+          />
+          <div class="project-card-body">
+            <h3 class="project-card-title">CLI Toothbrush</h3>
+            <p class="project-card-desc">
+              Sustainable toothbrush with UV-C sanitization (99.88% bacterial
+              elimination), modular snap-fit heads, and sliding polypropylene
+              travel case with USB-C charging.
+            </p>
+            <button class="project-card-btn">View Details →</button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div
+          class="project-card reveal reveal-delay-3"
+          onclick="openProjectModal('p4')"
+        >
+          <img
+            src="assets/images/projects/project_4/2.PNG"
+            alt="Mini Projects"
+            class="project-card-thumb"
+          />
+          <div class="project-card-body">
+            <h3 class="project-card-title">Mini Projects</h3>
+            <p class="project-card-desc">
+              Industrial pumps, heat exchangers, solar troughs, injection-molded
+              caps, phone shells, continuous tables, and Mobius rings — every
+              constraint is a parameter waiting to be solved.
+            </p>
+            <button class="project-card-btn">View Details →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Modals -->
+    <!-- P1 Modal -->
+    <div class="project-modal" id="modal-p1">
+      <div class="project-modal-content">
+        <button class="project-modal-close" onclick="closeProjectModal('p1')">
+          ✕
+        </button>
+        <h2>Universal Flush-Driven Aerosol Air Freshener Mechanism</h2>
+        <div class="project-detail-section">
+          <h3>⚠️ Problem</h3>
+          <p>
+            In most residential and public washrooms, air fresheners are either
+            manually operated or rely on electronic systems. Manual spraying
+            depends on user effort and is often neglected. Electronic air
+            fresheners increase cost, require regular battery replacement, and
+            may fail due to moisture exposure.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>💡 Solution</h3>
+          <p>
+            The proposed flush-driven aerosol air freshener eliminates these
+            issues by using a fully mechanical mechanism integrated with the
+            toilet flush system. When the flush lever is activated, motion is
+            transmitted through a flexible shaft to a set of rods and a
+            spring-loaded actuator that presses the aerosol button.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>⚙️ How It Works</h3>
+          <ul>
+            <li>Transfers flush lever motion using a flexible shaft</li>
+            <li>Converts motion through a rod-based mechanical linkage</li>
+            <li>Presses the aerosol can nozzle using a spring-loaded rod</li>
+            <li>Automatically resets after each flush cycle</li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>✅ Benefits</h3>
+          <ul>
+            <li>Hands-free and automatic air freshening</li>
+            <li>Operates without electricity or batteries</li>
+            <li>Low maintenance and durable mechanical design</li>
+            <li>Cost-effective compared to electronic dispensers</li>
+            <li>
+              Compatible with universal English-type commode flush systems
+            </li>
+            <li>Works with universally available aerosol cans</li>
+            <li>Suitable for residential and public washrooms</li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>⚠️ Precautions</h3>
+          <ul>
+            <li>
+              Mechanism must be installed below flush tank for proper motion
+              transmission
+            </li>
+            <li>Maximum applied force: 5N (FEA analysis)</li>
+            <li>
+              Flexible shaft should avoid sharp bends for reliable operation
+            </li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>📸 Gallery</h3>
+          <div class="project-gallery">
+            <img
+              src="assets/images/projects/project_1/complete assembly.JPG"
+              alt="Complete Assembly"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_1/bill_of_material_manual_mechanism.JPG"
+              alt="Bill of Material"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_1/rod_b-imageonline.co-merged.jpg"
+              alt="Rod Assembly"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_1/spring.JPG"
+              alt="Spring Mechanism"
+              onclick="openLightbox(this)"
+            />
+          </div>
+          <div style="margin-top: 16px">
+            <a
+              href="https://www.behance.net/gallery/215636069/Abdul-Wahab"
+              target="_blank"
+              class="btn btn-secondary"
+              style="font-size: 13px; padding: 10px 20px"
+              >View on Behance →</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 Modal -->
+    <div class="project-modal" id="modal-p2">
+      <div class="project-modal-content">
+        <button class="project-modal-close" onclick="closeProjectModal('p2')">
+          ✕
+        </button>
+        <h2>Mixture Machine</h2>
+        <div class="project-detail-section">
+          <h3>⚠️ Problem</h3>
+          <p>
+            Traditional blenders are countertop-bound, difficult to clean, and
+            over-engineered for single-serve use. Fixed blade assemblies trap
+            food residue, while cord dependency limits use to kitchen
+            environments.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>💡 Solution</h3>
+          <p>
+            A cordless, modular personal mixer engineered in SolidWorks with a
+            5-piece quick-assembly architecture. The design vertically
+            integrates a stabilized conical drive base, borosilicate glass
+            vessel, and dual-lid system—enabling blending, filtering, and
+            portable consumption from a single compact unit.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>✅ Benefits</h3>
+          <ul>
+            <li>
+              <strong>Space Efficiency:</strong> 40% smaller footprint; stores
+              in standard cup holders
+            </li>
+            <li>
+              <strong>Hygienic Serviceability:</strong> Tool-free disassembly
+              for complete sanitization
+            </li>
+            <li>
+              <strong>Portability:</strong> USB-C rechargeable — kitchen,
+              office, or travel
+            </li>
+            <li>
+              <strong>Dual-Function:</strong> Integrated strainer lid + drinking
+              lid converts to travel bottle
+            </li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>⚙️ Technical Details</h3>
+          <ul>
+            <li>
+              <strong>Drive:</strong> Conical ABS housing, 18V DC motor @
+              15,000–20,000 RPM
+            </li>
+            <li>
+              <strong>Vessel:</strong> 300–400ml borosilicate glass with
+              dual-thread interface
+            </li>
+            <li>
+              <strong>Cutting:</strong> 4-fin 304 stainless steel impeller
+            </li>
+            <li>
+              <strong>Safety:</strong> Double-click capacitive start,
+              Hall-effect sensor
+            </li>
+            <li><strong>Power:</strong> 2000mAh lithium-ion, USB-C charging</li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>📸 Gallery</h3>
+          <div class="project-gallery">
+            <img
+              src="assets/images/projects/project_2/1.jpeg"
+              alt="Mixture Machine 1"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_2/2.jpeg"
+              alt="Mixture Machine 2"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_2/3.jpeg"
+              alt="Mixture Machine 3"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_2/4.jpeg"
+              alt="Mixture Machine 4"
+              onclick="openLightbox(this)"
+            />
+          </div>
+          <div style="margin-top: 16px">
+            <a
+              href="https://www.behance.net/gallery/215636069/Abdul-Wahab"
+              target="_blank"
+              class="btn btn-secondary"
+              style="font-size: 13px; padding: 10px 20px"
+              >View on Behance →</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P3 Modal -->
+    <div class="project-modal" id="modal-p3">
+      <div class="project-modal-content">
+        <button class="project-modal-close" onclick="closeProjectModal('p3')">
+          ✕
+        </button>
+        <h2>CLI Toothbrush</h2>
+        <div class="project-detail-section">
+          <h3>⚠️ Problem</h3>
+          <p>
+            Manual brushes accumulate bacterial biomass in damp environments and
+            generate non-recyclable polymer waste. Conventional electric systems
+            lack integrated sanitization, while bulky charging bases prevent
+            field deployment.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>💡 Solution</h3>
+          <p>
+            The CLI system combines sonic drive technology with UV-C
+            sanitization in a sliding-interlock travel case. Modular
+            architecture features recyclable brush heads with snap-fit
+            interfaces, housed within slimline polypropylene shells that charge
+            via USB-C induction dock.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>✅ Benefits</h3>
+          <ul>
+            <li>
+              <strong>Sanitization:</strong> UV-C LED (265nm) — 99.88% bacterial
+              elimination
+            </li>
+            <li>
+              <strong>Sustainability:</strong> Replaceable heads reduce polymer
+              waste; PP housing recyclable
+            </li>
+            <li>
+              <strong>Portability:</strong> ≈18mm thickness with dual-rail
+              sliding mechanism
+            </li>
+            <li>
+              <strong>Protection:</strong> Enclosed case keeps brush clean,
+              prevents bristle damage
+            </li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>⚙️ Technical Details</h3>
+          <ul>
+            <li>
+              <strong>UV Sterilization:</strong> Auto-triggered 2-minute cycle,
+              mercury-free LED
+            </li>
+            <li>
+              <strong>Modular Interface:</strong> Tool-free head replacement
+              with SS pins
+            </li>
+            <li>
+              <strong>Power:</strong> 800mAh Li-Po, USB-C PD charging, 30-day
+              standby
+            </li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>📸 Gallery</h3>
+          <div class="project-gallery">
+            <img
+              src="assets/images/projects/project_3/1.PNG"
+              alt="CLI Toothbrush 1"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_3/2.PNG"
+              alt="CLI Toothbrush 2"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_3/3.PNG"
+              alt="CLI Toothbrush 3"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_3/4.PNG"
+              alt="CLI Toothbrush 4"
+              onclick="openLightbox(this)"
+            />
+          </div>
+          <div style="margin-top: 16px">
+            <a
+              href="https://www.behance.net/gallery/215636069/Abdul-Wahab"
+              target="_blank"
+              class="btn btn-secondary"
+              style="font-size: 13px; padding: 10px 20px"
+              >View on Behance →</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- P4 Modal -->
+    <div class="project-modal" id="modal-p4">
+      <div class="project-modal-content">
+        <button class="project-modal-close" onclick="closeProjectModal('p4')">
+          ✕
+        </button>
+        <h2>Mini Projects</h2>
+        <div class="project-detail-section">
+          <h3>⚠️ Problem</h3>
+          <p>
+            Mechanical design portfolios require demonstration of versatile CAD
+            proficiency across industrial, consumer, and conceptual
+            domains—spanning fluid power systems, thermal management, consumer
+            electronics protection, and complex geometric forms.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>💡 Solution</h3>
+          <p>
+            Curated collection of seven parametric SolidWorks projects:
+            industrial shell-and-tube heat exchanger with modular tube bundles;
+            centrifugal pump with optimized volute geometry; solar thermal
+            parabolic trough with structural trussing; disposable bottle cap
+            with snap-fit tamper features; smartphone protective casing with
+            precise port geometry; continuous-form sculptural table; and
+            mathematical Mobius ring bearing assembly.
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>✅ Benefits</h3>
+          <ul>
+            <li>
+              <strong>Versatility:</strong> Part modeling, assemblies,
+              surfacing, and structural design
+            </li>
+            <li>
+              <strong>Manufacturing Focus:</strong> Injection molding,
+              machining, and fabrication
+            </li>
+            <li>
+              <strong>Technical Range:</strong> Industrial equipment to consumer
+              goods to mathematical topology
+            </li>
+            <li>
+              <strong>Parametric Proficiency:</strong> Fully constrained
+              sketches, design tables, exploded views
+            </li>
+          </ul>
+        </div>
+        <div class="project-detail-section">
+          <h3>⚙️ Functions</h3>
+          <p>
+            Fluid power generation (pump), thermal energy transfer (exchanger),
+            solar radiation concentration (trough), containment sealing (cap),
+            device protection (casing), structural support (table), and kinetic
+            mathematical demonstration (Mobius ring).
+          </p>
+        </div>
+        <div class="project-detail-section">
+          <h3>📸 Gallery</h3>
+          <div class="project-gallery">
+            <img
+              src="assets/images/projects/project_4/1.PNG"
+              alt="Mini Project 1"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_4/2.PNG"
+              alt="Mini Project 2"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_4/3.PNG"
+              alt="Mini Project 3"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_4/4.PNG"
+              alt="Mini Project 4"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_4/5.PNG"
+              alt="Mini Project 5"
+              onclick="openLightbox(this)"
+            />
+            <img
+              src="assets/images/projects/project_4/6.PNG"
+              alt="Mini Project 6"
+              onclick="openLightbox(this)"
+            />
+          </div>
+          <div style="margin-top: 16px">
+            <a
+              href="https://www.behance.net/gallery/215636069/Abdul-Wahab"
+              target="_blank"
+              class="btn btn-secondary"
+              style="font-size: 13px; padding: 10px 20px"
+              >View on Behance →</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+      <div class="section-header reveal">
+        <div class="section-label">💻 Expertise</div>
+        <h2 class="section-title">Skills and Tools</h2>
+      </div>
+
+      <div class="skills-container">
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">💻</div>
+          <h3>Technical Skills</h3>
+          <div class="skill-items">
+            <span class="skill-item">SOLIDWORKS</span>
+            <span class="skill-item">2D Technical Drawing</span>
+            <span class="skill-item">3D CAD Modeling</span>
+            <span class="skill-item">3D Rendering</span>
+            <span class="skill-item">Project Management</span>
+            <span class="skill-item">Microsoft Office</span>
+            <span class="skill-item">Minitab</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-4">
+          <div class="skill-group-icon">🤖</div>
+          <h3>AI Skills</h3>
+          <div class="skill-items">
+            <span class="skill-item">Machine Learning</span>
+            <span class="skill-item">Web developing</span>
+            <span class="skill-item">Forms app developing</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-1">
+          <div class="skill-group-icon">🧠</div>
+          <h3>Soft Skills</h3>
+          <div class="skill-items">
+            <span class="skill-item">Clear Communication</span>
+            <span class="skill-item">Time Management</span>
+            <span class="skill-item">Detail Oriented</span>
+            <span class="skill-item">Problem Solving</span>
+            <span class="skill-item">Critical Thinking</span>
+            <span class="skill-item">Emotional Intelligence</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-2">
+          <div class="skill-group-icon">🖥️</div>
+          <h3>Tools</h3>
+          <div class="skill-items">
+            <span class="skill-item">SOLIDWORKS</span>
+            <span class="skill-item">Minitab</span>
+            <span class="skill-item">MS Office</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-3">
+          <div class="skill-group-icon">🌐</div>
+          <h3>Languages</h3>
+          <div class="skill-items">
+            <span class="skill-item">English (Professional)</span>
+            <span class="skill-item">Seraiki (Native)</span>
+            <span class="skill-item">Urdu & Hindi (Fluent)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 30 C300 0 900 40 1200 10"
+          stroke="url(#divGrad6)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad6">
+            <stop offset="0%" stop-color="#34A853" />
+            <stop offset="100%" stop-color="#4285F4" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Certifications Section -->
+    <section class="section" id="certifications">
+      <div class="section-header reveal">
+        <div class="section-label">📜 Credentials</div>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+
+      <div class="certs-grid">
+        <div class="cert-card reveal">
+          <div class="cert-card-icon">📜</div>
+          <h3>Professional Registration</h3>
+          <ul>
+            <li>Pakistan Engineering Council (PEC) Registration</li>
+            <li>Official Recognition as Registered Engineer</li>
+          </ul>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-1">
+          <div class="cert-card-icon">📐</div>
+          <h3>CAD & Design</h3>
+          <ul>
+            <li>Certified SolidWorks CAD Design Associate (CSWA)</li>
+          </ul>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-2">
+          <div class="cert-card-icon">📈</div>
+          <h3>Process Improvement & Quality</h3>
+          <ul>
+            <li>Lean Six Sigma White Belt (LSSWB)</li>
+            <li>Lean Six Sigma Yellow Belt (LSSYB)</li>
+            <li>Lean Fundamentals and Production</li>
+            <li>Data Analytics in Lean Six Sigma</li>
+          </ul>
+        </div>
+
+        <div class="cert-card reveal reveal-delay-3">
+          <div class="cert-card-icon">⛑️</div>
+          <h3>Safety & First Aid</h3>
+          <ul>
+            <li>CPR Certification</li>
+            <li>AED (Automated External Defibrillator)</li>
+            <li>First Aid Certification</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 20 Q600 40 1200 20"
+          stroke="url(#divGrad7)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad7">
+            <stop offset="0%" stop-color="#FBBC05" />
+            <stop offset="100%" stop-color="#EA4335" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Resume Section -->
+    <section class="section" id="resume">
+      <div class="section-header reveal">
+        <div class="section-label">📄 Resume</div>
+        <h2 class="section-title">Professional Summary</h2>
+      </div>
+
+      <div class="resume-content">
+        <div class="resume-main reveal">
+          <h3>About</h3>
+          <p>
+            Mechanical Design Engineer and Product Designer with 2.0+ years of
+            hands-on experience specializing in SolidWorks-based CAD modeling.
+            Skilled in 3D part design, complex assemblies, and detailed
+            manufacturing drawings in compliance with engineering standards.
+            Proven experience designing industrial machinery, mechanical
+            systems, and consumer products, with a strong focus on accuracy,
+            manufacturability, and functional performance. Adept at transforming
+            concepts into production-ready designs through creative
+            problem-solving techniques and industry standards. I am ready to
+            help turn ideas into reality.
+          </p>
+
+          <h3 style="margin-top: 24px">Key Highlights</h3>
+          <div class="resume-highlights">
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">🎯</span>
+              <span
+                ><strong>Expertise in CAD:</strong> Advanced proficiency in
+                SolidWorks for 3D modeling, rendering, and simulation.</span
+              >
+            </div>
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">🏗️</span>
+              <span
+                ><strong>Product Design:</strong> Successfully designed consumer
+                and industrial products (Toothbrush, Mixture Machine, Industrial
+                Pumps).</span
+              >
+            </div>
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">🚀</span>
+              <span
+                ><strong>Project Delivery:</strong> Delivered quality design
+                services to international clients via Upwork — concept to
+                manufacturing.</span
+              >
+            </div>
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">📝</span>
+              <span
+                ><strong>Technical Communication:</strong> Strong ability to
+                produce detailed technical drawings and communicate complex
+                design concepts.</span
+              >
+            </div>
+          </div>
+
+          <h3 style="margin-top: 24px">Qualifications</h3>
+          <div class="resume-highlights">
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">🎓</span>
+              <span
+                ><strong>BS Mechanical Engineering:</strong> University of
+                Engineering and Technology, Peshawar.</span
+              >
+            </div>
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">📐</span>
+              <span
+                ><strong>Certified Associate:</strong> SOLIDWORKS CAD
+                Design.</span
+              >
+            </div>
+            <div class="resume-highlight">
+              <span class="resume-highlight-icon">📈</span>
+              <span
+                ><strong>Process Improvement:</strong> Lean Six Sigma White and
+                Yellow Belt certified.</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-sidebar">
+          <div class="resume-download-card reveal">
+            <h3>Download CV</h3>
+            <p>Get the full resume in PDF format</p>
+            <a href="assets/files/abdul_wahab_cv1.pdf" target="_blank" class="btn">
+              <svg
+                class="btn-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download PDF
+            </a>
+          </div>
+          <div class="resume-refs reveal reveal-delay-1">
+            <h3>References</h3>
+            <ul>
+              <li>Professor Dr. Naveed Ahmad (UET Peshawar)</li>
+              <li>Professor Muhammad Alam Zaib Khan (UET Peshawar)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 20 Q200 0 400 30 T800 10 T1200 20"
+          stroke="url(#divGrad8)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad8">
+            <stop offset="0%" stop-color="#EA4335" />
+            <stop offset="100%" stop-color="#34A853" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Hobbies Section -->
+    <section class="section" id="hobbies">
+      <div class="section-header reveal">
+        <div class="section-label">🎯 Interests</div>
+        <h2 class="section-title">Hobbies</h2>
+      </div>
+
+      <div class="skills-container">
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">🏏</div>
+          <h3>Physical</h3>
+          <div class="skill-items">
+            <span class="skill-item">Cricket</span>
+            <span class="skill-item">Kirate (Defense Strategies)</span>
+          </div>
+        </div>
+
+        <div class="skill-group reveal reveal-delay-1">
+          <div class="skill-group-icon">💻</div>
+          <h3>Online</h3>
+          <div class="skill-items">
+            <span class="skill-item">Machine Learning</span>
+            <span class="skill-item">Web Developing</span>
+            <span class="skill-item">Forms App Developing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SVG Divider -->
+    <div class="svg-divider">
+      <svg viewBox="0 0 1200 40" fill="none" preserveAspectRatio="none">
+        <path
+          d="M0 20 Q600 0 1200 20"
+          stroke="url(#divGrad7)"
+          stroke-width="2"
+          class="svg-animated-path scroll-animate"
+        />
+        <defs>
+          <linearGradient id="divGrad7">
+            <stop offset="0%" stop-color="#4285F4" />
+            <stop offset="100%" stop-color="#34A853" />
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+      <div class="section-header reveal">
+        <div class="section-label">📬 Get in Touch</div>
+        <h2 class="section-title">Contact</h2>
+        <p class="section-subtitle">
+          Let's discuss your next project — I'm ready to help turn ideas into
+          reality.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <a
+            href="https://wa.me/923183605425"
+            target="_blank"
+            class="contact-card"
+          >
+            <span class="contact-icon">💬</span>
+            <div>
+              <div class="contact-label">WhatsApp</div>
+              <div class="contact-value">+92 318 360 5425</div>
+            </div>
+          </a>
+          <a 
+            href="mailto:abdulwahabeng2023@gmail.com" 
+            target="_blank"
+            class="contact-card"
+          >
+            <span class="contact-icon">📧</span>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">abdulwahabeng2023@gmail.com</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="social-links reveal reveal-delay-1">
+          <a
+            href="https://www.linkedin.com/in/abdul-wahab-4085b72b0/"
+            target="_blank"
+            class="social-card linkedin"
+          >
+            <span class="social-card-icon">💼</span>
+            <span class="social-card-name">LinkedIn</span>
+          </a>
+          <a
+            href="https://github.com/WahabAbdull"
+            target="_blank"
+            class="social-card github"
+          >
+            <span class="social-card-icon">🐙</span>
+            <span class="social-card-name">GitHub</span>
+          </a>
+          <a
+            href="https://www.behance.net/gallery/215636069/Abdul-Wahab"
+            target="_blank"
+            class="social-card behance"
+          >
+            <span class="social-card-icon">🎨</span>
+            <span class="social-card-name">Behance</span>
+          </a>
+          <a
+            href="https://www.upwork.com/freelancers/~019c119d09bbe7f8c9"
+            target="_blank"
+            class="social-card upwork"
+          >
+            <span class="social-card-icon">💚</span>
+            <span class="social-card-name">Upwork</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-top">
+          <div class="footer-brand-text">Abdul <br>&nbsp;&nbsp;&nbsp;&nbsp;Wahab</div>
+          <div class="footer-links-col">
+            <h4>Navigation</h4>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+          </div>
+          <div class="footer-links-col">
+            <h4>Connect</h4>
+            <a
+              href="https://www.linkedin.com/in/abdul-wahab-4085b72b0/"
+              target="_blank"
+              >LinkedIn</a
+            >
+            <a
+              href="https://www.behance.net/gallery/215636069/Abdul-Wahab"
+              target="_blank"
+              >Behance</a
+            >
+            <a href="https://github.com/WahabAbdull" target="_blank">GitHub</a>
+            <a
+              href="https://www.upwork.com/freelancers/~019c119d09bbe7f8c9"
+              target="_blank"
+              >Upwork</a
+            >
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2025 Engr. Abdul Wahab. All rights reserved.</span>
+          <span>Mechanical Design Engineer & Product Designer</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+      <img id="lightboxImg" src="" alt="Full size image" />
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
