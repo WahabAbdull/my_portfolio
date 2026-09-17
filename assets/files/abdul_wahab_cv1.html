@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Europass CV — Engr. Abdul Wahab</title> -->
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 15mm;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+            font-size: 10pt;
+            color: #1a1a2e;
+            background: #e8e8e8;
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ===== PAGE CONTAINER ===== */
+        .cv-page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: #fff;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+            padding: 0;
+            overflow: hidden;
+        }
+
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .cv-page {
+                width: auto;
+                min-height: auto;
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+                overflow: visible !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* ===== EUROPASS HEADER BAR ===== */
+        .europass-header {
+            background: #0ea5e9;
+            color: #fff;
+            padding: 8px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 9pt;
+        }
+
+        .europass-header .europass-logo {
+            font-weight: 700;
+            font-size: 13pt;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .europass-header .europass-sub {
+            font-size: 8.5pt;
+            opacity: 0.85;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== PERSONAL INFO SECTION ===== */
+        .personal-section {
+            display: flex;
+            padding: 24px 30px 20px 30px;
+            gap: 24px;
+            border-bottom: 2.5px solid #0ea5e9;
+        }
+
+        .photo-col {
+            flex-shrink: 0;
+        }
+
+        .photo-col img {
+            width: 110px;
+            height: 140px;
+            object-fit: cover;
+            object-position: top;
+            border: 2px solid #0ea5e9;
+            border-radius: 4px;
+        }
+
+        .info-col {
+            flex: 1;
+        }
+
+        .cv-name {
+            font-size: 22pt;
+            font-weight: 700;
+            color: #0ea5e9;
+            margin-bottom: 2px;
+            letter-spacing: 0.5px;
+        }
+
+        .cv-title-line {
+            font-size: 11pt;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 32px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 9.5pt;
+        }
+
+        .info-label {
+            font-weight: 600;
+            color: #0ea5e9;
+            min-width: 70px;
+            flex-shrink: 0;
+        }
+
+        .info-value {
+            color: #333;
+        }
+
+        .info-value a {
+            color: #0ea5e9;
+            text-decoration: none;
+        }
+
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== MAIN CV BODY ===== */
+        .cv-body {
+            padding: 0 30px 30px 30px;
+        }
+
+        /* ===== SECTION LAYOUT (Europass two-column) ===== */
+        .cv-section {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 0 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cv-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-label {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #0ea5e9;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            padding-top: 2px;
+        }
+
+        .section-content {
+            font-size: 10pt;
+        }
+
+        /* ===== EXPERIENCE ENTRY ===== */
+        .entry {
+            margin-bottom: 16px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-date {
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 2px;
+            font-style: italic;
+        }
+
+        .entry-role {
+            font-size: 10.5pt;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 1px;
+        }
+
+        .entry-org {
+            font-size: 9.5pt;
+            color: #0ea5e9;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .entry-sub {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #444;
+            margin-top: 6px;
+            margin-bottom: 2px;
+        }
+
+        .entry-details {
+            list-style: none;
+            padding: 0;
+        }
+
+        .entry-details li {
+            font-size: 9.5pt;
+            color: #333;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 2px;
+            line-height: 1.5;
+        }
+
+        .entry-details li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-size: 8pt;
+        }
+
+        /* ===== EDUCATION ===== */
+        .edu-thesis {
+            background: #f0f4ff;
+            border-left: 3px solid #0ea5e9;
+            padding: 8px 12px;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+
+        .edu-thesis-label {
+            font-size: 8.5pt;
+            font-weight: 700;
+            color: #0ea5e9;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .edu-thesis-title {
+            font-size: 9.5pt;
+            font-style: italic;
+            color: #333;
+            margin-top: 2px;
+        }
+
+        .edu-thesis-sup {
+            font-size: 8.5pt;
+            color: #666;
+            margin-top: 2px;
+        }
+
+        .coursework-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 8px;
+        }
+
+        .coursework-tag {
+            background: #e8eef8;
+            color: #0ea5e9;
+            font-size: 8pt;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-group h4 {
+            font-size: 9.5pt;
+            font-weight: 700;
+            color: #0ea5e9;
+            margin-bottom: 4px;
+        }
+
+        .skill-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-group ul li {
+            font-size: 9pt;
+            color: #333;
+            padding-left: 12px;
+            position: relative;
+            margin-bottom: 1px;
+        }
+
+        .skill-group ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .cert-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cert-list li {
+            font-size: 9.5pt;
+            padding-left: 14px;
+            position: relative;
+            margin-bottom: 3px;
+        }
+
+        .cert-list li::before {
+            content: "✦";
+            position: absolute;
+            left: 0;
+            color: #0ea5e9;
+            font-size: 7pt;
+            top: 2px;
+        }
+
+        .cert-list li strong {
+            color: #1a1a2e;
+        }
+
+        /* ===== RESEARCH INTERESTS ===== */
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .interest-tag {
+            background: #0ea5e9;
+            color: #fff;
+            font-size: 8.5pt;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: 500;
+        }
+
+        /* ===== LANGUAGE BAR ===== */
+        .lang-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+
+        .lang-table th {
+            background: #e8eef8;
+            color: #0ea5e9;
+            font-weight: 600;
+            padding: 5px 10px;
+            text-align: left;
+            border: 1px solid #ccd6e8;
+            font-size: 8.5pt;
+        }
+
+        .lang-table td {
+            padding: 5px 10px;
+            border: 1px solid #ddd;
+            color: #333;
+        }
+
+        /* ===== REFERENCES ===== */
+        .ref-card {
+            background: #f8f9fc;
+            border: 1px solid #e0e5f0;
+            border-radius: 4px;
+            padding: 10px 14px;
+            display: inline-block;
+        }
+
+        .ref-name {
+            font-weight: 700;
+            font-size: 10pt;
+            color: #1a1a2e;
+        }
+
+        .ref-title {
+            font-size: 9pt;
+            color: #555;
+            font-style: italic;
+        }
+
+        .ref-contact-info {
+            font-size: 9pt;
+            color: #333;
+            margin-top: 4px;
+        }
+
+        .ref-contact-info span {
+            display: inline-block;
+            margin-right: 16px;
+        }
+
+        /* ===== FOOTER ===== */
+        .cv-footer {
+            text-align: center;
+            font-size: 7.5pt;
+            color: #999;
+            padding: 12px 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        /* ===== PRINT BUTTON ===== */
+        .print-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #0ea5e9;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 11pt;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 51, 153, 0.35);
+            transition: all 0.2s;
+            z-index: 999;
+        }
+
+        .print-btn:hover {
+            background: #0ea5e9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 51, 153, 0.45);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Print Button -->
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <!-- PAGE 1 -->
+    <div class="cv-page">
+
+        <!-- Personal Information -->
+        <div class="personal-section">
+            <div class="photo-col">
+                <img src="../images/profile.png" alt="Engr. Abdul Wahab">
+            </div>
+            <div class="info-col">
+                <div class="cv-name">Engr. Abdul Wahab</div>
+                <div class="cv-title-line">Mechanical Design Engineer &amp; Product Designer</div>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Email</span>
+                        <span class="info-value"><a
+                                href="mailto:abdulwahabeng2023@gmail.com">abdulwahabeng2023@gmail.com</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Phone</span>
+                        <span class="info-value"><a href="https://wa.me/923183605425">+92 318 3605425</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Address</span>
+                        <span class="info-value">Islamabad, Pakistan</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nationality</span>
+                        <span class="info-value">Pakistani</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">LinkedIn</span>
+                        <span class="info-value"><a href="https://www.linkedin.com/in/abdul-wahab-4085b72b0/"
+                                target="_blank">linkedin.com/in/abdul-wahab</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">GitHub</span>
+                        <span class="info-value"><a href="https://github.com/WahabAbdull"
+                                target="_blank">github.com/WahabAbdull</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Upwork</span>
+                        <span class="info-value"><a href="https://www.upwork.com/freelancers/~019c119d09bbe7f8c9"
+                                target="_blank">upwork.com/freelancers/abdulwahab</a></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Portfolio</span>
+                        <span class="info-value"><a href="https://wahababdull.github.io/my_portfolio/"
+                                target="_blank">wahababdull.github.io/my_portfolio/</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CV BODY -->
+        <div class="cv-body">
+
+            <!-- RESEARCH INTERESTS -->
+            <div class="cv-section">
+                <div class="section-label">Research<br>Interests</div>
+                <div class="section-content">
+                    <div class="interest-tags">
+                        <span class="interest-tag">Product Development</span>
+                        <span class="interest-tag">Embedded Systems</span>
+                        <span class="interest-tag">Finite Element Analysis (FEA)</span>
+                        <span class="interest-tag">Computational Fluid Dynamics (CFD)</span>
+                        <span class="interest-tag">Autonomous Systems</span>
+                        <span class="interest-tag">Mechanical Systems</span>
+                        <span class="interest-tag">DFM &amp; DFA</span>
+                        <span class="interest-tag">Simulations</span>
+                        <span class="interest-tag">Mechanical Engineering</span>
+                        <span class="interest-tag">Computer-Aided Design (CAD)</span>
+                        <span class="interest-tag">Computer-Aided Engineering (CAE)</span>
+                        <span class="interest-tag">3D Printing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROFILE SUMMARY -->
+            <div class="cv-section">
+                <div class="section-label">Profile<br>Summary</div>
+                <div class="section-content">
+                    <p style="text-align: justify;">
+                        As an innovative Mechanical Design Engineer with a comprehensive background in full-cycle
+                        Product Development and Mechanical Engineering, I am highly driven to get advanced knowledge
+                        through Master's program. My expertise encompasses the
+                        orchestration of sophisticated Mechanical and Autonomous Systems, leaning heavily on
+                        Computer-Aided Engineering (CAE), CAD, embedded systems, simulation and 3D Printing. By
+                        employing rigorous
+                        Simulations including Finite Element Analysis (FEA) and Computational Fluid Dynamics (CFD) and
+                        integrating Embedded Systems, I consistently translate conceptual blueprints into robust,
+                        production-ready architectures. Having rigorously enforced DFM and DFA paradigms to streamline
+                        manufacturability, my overarching ambition is to fuse high-fidelity simulation insights with
+                        strategic engineering execution to pioneer highly optimized, future-ready technical systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- WORK EXPERIENCE -->
+            <div class="cv-section">
+                <div class="section-label">Work<br>Experience</div>
+                <div class="section-content">
+
+                    <!-- Dysol -->
+                    <div class="entry">
+                        <div class="entry-date">June 2026 — September 2026</div>
+                        <div class="entry-role">Mechanical Design Engineer</div>
+                        <div class="entry-org">Dysol (Pvt) Ltd, Lahore, Pakistan</div>
+
+                        <div class="entry-sub">R&amp;D Department — Key Responsibilities &amp; Contributions</div>
+                        <ul class="entry-details">
+                            <li>Serving as a core Mechanical Design Engineer in the Research &amp; Development
+                                department, focusing on innovative product development.</li>
+                            <li>Leading the end-to-end design and optimization of complex mechanical systems, including
+                                medical devices and fitness equipment.</li>
+                            <li>Conducting iterative engineering analysis, simulation, and validation to ensure
+                                functional performance and reliability.</li>
+                            <li>Applying DFM and DFA principles to bridge the gap between conceptual design and
+                                full-scale manufacturing.</li>
+                            <li>Collaborating across disciplines to integrate mechanical, fluidic, and electronic
+                                subsystems into cohesive, production-ready architectures.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Freelance -->
+                    <div class="entry">
+                        <div class="entry-date">August 2025 — Present</div>
+                        <div class="entry-role">Mechanical Design Engineer</div>
+                        <div class="entry-org">Upwork (National & International Clients)</div>
+                        <ul class="entry-details">
+                            <li>Delivered professional mechanical and product design services to national and
+                                international clients,applying rigorous engineering standards.</li>
+                            <li>Engineered precise 3D CAD models, complex assemblies, 2D technical drawings, and
+                                photorealistic renders for prototyping and manufacturing.</li>
+                            <li>Optimized components for consumer products and industrial applications, focusing on
+                                optimal material selection and manufacturing processes.</li>
+                            <li>Maintained a high degree of technical communication to translate client requirements
+                                into verifiable engineering parameters.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Self-Employed -->
+                    <!-- <div class="entry">
+                        <div class="entry-date">December 2021 — Present</div>
+                        <div class="entry-role">Mechanical Design Engineer — Self-Employed</div>
+                        <div class="entry-org">Islamabad, Pakistan</div>
+                        <ul class="entry-details">
+                            <li>Executed end-to-end design of precise 3D mechanical parts and production-ready drawings
+                                using SolidWorks.</li>
+                            <li>Completed comprehensive industrial projects including Centrifugal Pumps, Shell-and-Tube
+                                Heat Exchangers, and Parabolic Troughs.</li>
+                            <li>Developed consumer-oriented designs (Mixture Machines, Helmets, UV-C Toothbrushes) with
+                                a focus on functional ergonomics and hygiene.</li>
+                            <li>Validated manufacturability, dimensional accuracy, and functional performance through
+                                iterative design review.</li>
+                        </ul>
+                    </div> -->
+
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="cv-section">
+                <div class="section-label">Education<br>&amp; Training</div>
+                <div class="section-content">
+                    <div class="entry">
+                        <div class="entry-date">September 2019 — October 2023</div>
+                        <div class="entry-role">B.Sc. Mechanical Engineering</div>
+                        <div class="entry-org">University of Engineering and Technology (UET), Peshawar — KPK, Pakistan
+                        </div>
+
+                        <div class="edu-thesis">
+                            <div class="edu-thesis-label">Final Year Thesis Project</div>
+                            <div class="edu-thesis-title">Design and Fabrication of Mechanism for Automated Installation
+                                of 18-Liter Water Bottle for Water Dispensers</div>
+                            <div class="edu-thesis-sup">Supervised by <strong>Prof. Usman</strong></div>
+                        </div>
+
+                        <div class="coursework-tags">
+                            <span class="coursework-tag">Thermodynamics</span>
+                            <span class="coursework-tag">Fluid Mechanics</span>
+                            <span class="coursework-tag">Machine Design</span>
+                            <span class="coursework-tag">CAD / CAM</span>
+                            <span class="coursework-tag">Manufacturing Processes</span>
+                            <span class="coursework-tag">Heat Transfer</span>
+                            <span class="coursework-tag">Mechanics of Materials</span>
+                            <span class="coursework-tag">Engineering Dynamics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TECHNICAL SKILLS -->
+            <div class="cv-section">
+                <div class="section-label">Technical<br>Skills</div>
+                <div class="section-content">
+                    <div class="skills-grid">
+                        <div class="skill-group">
+                            <h4>CAD &amp; Design</h4>
+                            <ul>
+                                <li>SOLIDWORKS (3D / 2D Modeling)</li>
+                                <li>Parametric &amp; Advanced Surface Modeling</li>
+                                <li>Technical Drawing with GD&amp;T</li>
+                                <li>Photorealistic Rendering</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Engineering Analysis</h4>
+                            <ul>
+                                <li>Finite Element Analysis (FEA)</li>
+                                <li>Computational Fluid Dynamics (CFD)</li>
+                                <li>Design for Assembly (DFA)</li>
+                                <li>Design for Manufacturability (DFM)</li>
+                                <li>Minitab (Data Analysis)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Simulation Software</h4>
+                            <ul>
+                                <li>ANSYS (Structural &amp; Thermal)</li>
+                                <li>Altair EDEM (DEM Simulation)</li>
+                                <li>SolidWorks Simulation &amp; Flow</li>
+                                <li>Motion Analysis</li>
+                            </ul>
+                        </div>
+                        <div class="skill-group">
+                            <h4>Manufacturing &amp; Prototyping</h4>
+                            <ul>
+                                <li>Additive Manufacturing (3D Printing)</li>
+                                <li>CNC Machining Optimization</li>
+                                <li>Injection Molding Prep</li>
+                                <li>Tolerance Stack-up Analysis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CERTIFICATIONS -->
+            <div class="cv-section">
+                <div class="section-label">Courses &amp;<br>Certifications</div>
+                <div class="section-content">
+                    <ul class="cert-list">
+                        <li><strong>IELTS Academic</strong> — Band 6.0 (Listening, Reading, Writing, Speaking)</li>
+                        <li><strong>Certified SOLIDWORKS Associate (CSWA)</strong> — Dassault Systèmes</li>
+                        <li><strong>Pakistan Engineering Council (PEC)</strong> — Registered Engineer</li>
+                        <li><strong>Lean Six Sigma Yellow Belt (LSSYB)</strong> — udemy.com</li>
+                        <li><strong>Lean Six Sigma White Belt (LSSWB)</strong> — udemy.com</li>
+                        <li><strong>Machine Learning in Python</strong> — codanics.com</li>
+                        <li><strong>Introduction to Minitab</strong> — simplilearn.com</li>
+                        <li><strong>CPR, AED &amp; FIRST AID</strong> — alison.com</li>
+                        <li><strong>ABC of Statistics</strong> — codanics.com</li>
+                        <li><strong>AI ka Chilla 2026</strong> — codanics.com</li>
+                        <li><strong>Python</strong> — codanics.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FEATURED PROJECTS -->
+            <div class="cv-section">
+                <div class="section-label">Featured<br>Projects</div>
+                <div class="section-content">
+
+                    <div class="entry">
+                        <div class="entry-role">1. Fitness Product Development — Mechanical Dispensing System</div>
+                        <div class="entry-date">Industry: Fitness & Consumer Products</div>
+                        <div class="entry-sub">Key Contributions:</div>
+                        <ul class="entry-details">
+                            <li>Designed mechanical assemblies involving gears, rack mechanisms, springs, sliding
+                                mechanisms, and functional interfaces.</li>
+                            <li>Developed solutions for multi-function operation within limited mechanical movement
+                                constraints.</li>
+                            <li>Performed multiple design iterations to improve mechanism reliability and
+                                manufacturability.</li>
+                            <li>Applied DFM and DFA principles for production-oriented design.</li>
+                            <li>Conducted motion analysis and mechanical validation.</li>
+                        </ul>
+                        <div class="entry-sub">Challenges Managed:</div>
+                        <p style="font-size: 9.5pt; color: #333; margin-bottom: 4px;">Optimizing complex mechanical
+                            interactions while maintaining compact design requirements. Achieved functional mechanism
+                            performance through iterative CAD refinement and simulation.</p>
+                        <div class="entry-sub">Tools Used:</div>
+                        <p style="font-size: 9.5pt; color: #333;">SolidWorks (3D Modeling, Assembly Design, Motion
+                            Analysis), Altair EDEM (Simulation)</p>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-role">2. Medical Device Development — Controlled Flow Mechanical System</div>
+                        <div class="entry-date">Industry: Medical Technology</div>
+                        <div class="entry-sub">Key Contributions:</div>
+                        <ul class="entry-details">
+                            <li>Designed mechanical components for controlled flow and operational safety.</li>
+                            <li>Developed assemblies involving valves, filters, actuators, and flow-control components.
+                            </li>
+                            <li>Applied mechanical design principles related to pressure management, thermal
+                                considerations, and fluid behavior.</li>
+                            <li>Implemented DFM and DFA methodologies for manufacturing readiness.</li>
+                            <li>Performed simulation-based design validation.</li>
+                        </ul>
+                        <div class="entry-sub">Challenges Managed:</div>
+                        <p style="font-size: 9.5pt; color: #333; margin-bottom: 4px;">Maintaining reliable mechanical
+                            operation under strict performance requirements. Improved design reliability through
+                            engineering analysis and simulation.</p>
+                        <div class="entry-sub">Tools Used:</div>
+                        <p style="font-size: 9.5pt; color: #333;">SolidWorks (CAD Modeling & Motion Analysis), ANSYS
+                            (Simulation & Validation)</p>
+                    </div>
+
+                    <div class="entry">
+                        <div class="entry-role">3. Design and Fabrication of Mechanism for Automated Installation of 18
+                            Liter water bottle of Water Dispenser</div>
+                        <div class="entry-date">Industry: Academic Research (Final Year Project)</div>
+                        <div class="entry-sub">Key Contributions:</div>
+                        <ul class="entry-details">
+                            <li>Designed the complete 3D CAD model for the automated mechanism.</li>
+                            <li>Developed a comprehensive solution to automate the manual lifting process, significantly
+                                reducing human effort.</li>
+                            <li>Engineered a customized lifting-to-adjustment sequence for seamless water bottle
+                                installation and atomization.</li>
+                            <li>Optimized the design by utilizing a minimum number of mechanisms to achieve
+                                cost-effective and reliable results.</li>
+                        </ul>
+                        <div class="entry-sub">Challenges Managed:</div>
+                        <p style="font-size: 9.5pt; color: #333; margin-bottom: 4px;">Designing a reliable lifting
+                            mechanism capable of handling 18-liter loads safely and efficiently. Balancing
+                            cost-effectiveness with robust mechanical performance through design optimization.</p>
+                        <div class="entry-sub">Tools Used:</div>
+                        <p style="font-size: 9.5pt; color: #333;">SolidWorks (3D Modeling, Simulation, Animation, Motion
+                            Analysis)</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- AI FEATURED PROJECTS -->
+            <div class="cv-section">
+                <div class="section-label">AI Featured<br>Projects</div>
+                <div class="section-content">
+                    <div
+                        style="background: #f4f8fc; border-left: 4px solid #0ea5e9; padding: 14px 16px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                            <div style="font-size: 10.5pt; font-weight: 700; color: #1a1a2e;">Doc Agent — AI Research
+                                Assistant</div>
+                            <a href="https://doc-agent-use-me.streamlit.app/" target="_blank"
+                                style="background: #0ea5e9; color: #fff; text-decoration: none; font-size: 8pt; padding: 4px 10px; border-radius: 12px; font-weight: 600; flex-shrink: 0; margin-left: 10px;">View
+                                Live App ↗</a>
+                        </div>
+                        <p style="font-size: 9.5pt; color: #333; margin-bottom: 12px; line-height: 1.5;">
+                            An intelligent document analysis system built to make Research &amp; Development incredibly
+                            easy.
+                            Users can upload any type of file and interactively ask questions to extract complex
+                            knowledge and information hidden within the documents instantly.
+                        </p>
+                        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                            <span class="coursework-tag">Python</span>
+                            <span class="coursework-tag">Streamlit</span>
+                            <span class="coursework-tag">Large Language Models (LLMs)</span>
+                            <span class="coursework-tag">Document Parsing</span>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: #f4f8fc; border-left: 4px solid #10b981; padding: 14px 16px; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); margin-top: 12px;">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px;">
+                            <div style="font-size: 10.5pt; font-weight: 700; color: #1a1a2e;">Visual Keyword Cloud
+                                Generator</div>
+                            <a href="https://featured-projects-words-cloud.streamlit.app/" target="_blank"
+                                style="background: #10b981; color: #fff; text-decoration: none; font-size: 8pt; padding: 4px 10px; border-radius: 12px; font-weight: 600; flex-shrink: 0; margin-left: 10px;">View
+                                Live App ↗</a>
+                        </div>
+                        <p style="font-size: 9.5pt; color: #333; margin-bottom: 6px; line-height: 1.5;">
+                            An automated analytics application that enables professionals to generate dynamic visual
+                            keyword clouds from text, uploaded documents/files, professional work, projects, skills, or
+                            featured achievements. Instead of manual inspection, the app automatically analyzes content
+                            and presents high-frequency keywords in an intuitive, easy-to-understand visual format.
+                        </p>
+                        <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                            <span class="coursework-tag">Python</span>
+                            <span class="coursework-tag">Streamlit</span>
+                            <span class="coursework-tag">Text Processing</span>
+                            <span class="coursework-tag">Word Cloud Generation</span>
+                            <span class="coursework-tag">File Handling</span>
+                            <span class="coursework-tag">AI-assisted Development</span>
+                            <span class="coursework-tag">App Deployment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LANGUAGES -->
+            <div class="cv-section">
+                <div class="section-label">Languages</div>
+                <div class="section-content">
+                    <table class="lang-table">
+                        <thead>
+                            <tr>
+                                <th>Language</th>
+                                <th>Level</th>
+                                <!-- <th>Listening</th>
+                                <th>Reading</th>
+                                <th>Speaking</th>
+                                <th>Writing</th> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>English</strong></td>
+                                <td>Proficient (B2)</td>
+                                <!-- <td>Proficient (B2)</td>
+                                <td>Proficient (B2)</td>
+                                <td>Proficient (B2)</td> -->
+                            </tr>
+                            <tr>
+                                <td><strong>Urdu</strong></td>
+                                <td>Fluent (C2)</td>
+                                <!-- <td>Native (C2)</td>
+                                <td>Native (C2)</td>
+                                <td>Native (C2)</td> -->
+                            </tr>
+                            <tr>
+                                <td><strong>Seraiki</strong></td>
+                                <td>Native (C2)</td>
+                                <!-- <td>Native (C2)</td>
+                                <td>Native (C2)</td>
+                                <td>Intermediate (B1)</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- REFERENCES -->
+            <div class="cv-section">
+                <div class="section-label">Academic<br>References</div>
+                <div class="section-content">
+                    <div class="ref-card" style="margin-bottom: 10px;">
+                        <div class="ref-name">Prof. Dr. Naveed Ahmad</div>
+                        <div class="ref-title">Assistant Professor, UET Peshawar, KPK, Pakistan</div>
+                        <div class="ref-contact-info">
+                            <span>✉ naveed@uetpeshawar.edu.pk</span>
+                            <span>☎ +92 92167968</span>
+                        </div>
+                    </div>
+                    <div class="ref-card" style="margin-bottom: 10px;">
+                        <div class="ref-name">Prof. Muhammad Alam Zaib Khan</div>
+                        <div class="ref-title">Assistant Professor, UET Peshawar, Khyber Pakhtunkhwa, Pakistan</div>
+                        <div class="ref-contact-info">
+                            <span>✉ alamzaibkhan@uetpeshwar.edu.pk</span>
+                            <span>☎ +92 3329368952</span>
+                        </div>
+                    </div>
+                    <div class="ref-card">
+                        <div class="ref-name">Dr. M. Sadiq Khattak</div>
+                        <div class="ref-title">UET Peshawar, Khyber Pakhtunkhwa, Pakistan</div>
+                        <div class="ref-contact-info">
+                            <span>✉ sadiqkhattak@uetpeshawar.edu.pk</span>
+                            <span>☎ Office: +91-91-9222217 | Cell: +92-333-5444042</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
