@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Wahab - Curriculum Vitae</title>
+    <style>
+        /* ===== RESET & ROOT STYLES ===== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm 15mm;
+        }
+
+        body {
+            font-family: Calibri, 'Segoe UI', Arial, sans-serif;
+            font-size: 10pt;
+            color: #000000;
+            background-color: #f3f4f6;
+            line-height: 1.38;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        /* ===== DOCUMENT CONTAINER ===== */
+        .cv-container {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 18mm 18mm;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        @media print {
+            html, body {
+                background: #ffffff;
+                margin: 0;
+                padding: 0;
+            }
+
+            .cv-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                min-height: auto !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .section-title,
+            .entry-title,
+            .project-header-row,
+            .project-name {
+                break-after: avoid !important;
+                page-break-after: avoid !important;
+            }
+
+            .entry,
+            .project-block {
+                break-inside: auto !important;
+                page-break-inside: auto !important;
+            }
+
+            ul.bullet-list li,
+            ul.nested-list li {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+            }
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            margin-bottom: 14px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .header-name {
+            font-size: 22pt;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: #000000;
+            text-transform: uppercase;
+        }
+
+        .header-title {
+            font-size: 9.5pt;
+            font-weight: 600;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .header-contact {
+            text-align: center;
+            font-size: 9.5pt;
+            color: #000000;
+            line-height: 1.45;
+            margin-bottom: 12px;
+        }
+
+        .header-contact a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .header-contact a:hover {
+            color: #004499;
+        }
+
+        /* ===== PROFILE SUMMARY ===== */
+        .profile-summary {
+            font-size: 9.5pt;
+            color: #000000;
+            text-align: justify;
+            line-height: 1.4;
+            margin-bottom: 14px;
+        }
+
+        /* ===== SECTION HEADINGS ===== */
+        .section-title {
+            font-size: 11pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #000000;
+            margin-top: 16px;
+            margin-bottom: 8px;
+        }
+
+        /* ===== ENTRY BLOCKS ===== */
+        .entry {
+            margin-bottom: 12px;
+        }
+
+        .entry-title {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 1px;
+        }
+
+        .entry-date {
+            font-size: 9.5pt;
+            color: #222222;
+            margin-bottom: 4px;
+        }
+
+        /* ===== BULLET LISTS ===== */
+        ul.bullet-list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 4px;
+        }
+
+        ul.bullet-list li {
+            font-size: 9.5pt;
+            color: #000000;
+            line-height: 1.38;
+            margin-bottom: 3px;
+            text-align: justify;
+        }
+
+        ul.nested-list {
+            list-style-type: circle;
+            padding-left: 22px;
+            margin-top: 2px;
+            margin-bottom: 6px;
+        }
+
+        ul.nested-list li {
+            font-size: 9.3pt;
+            color: #111111;
+            line-height: 1.36;
+            margin-bottom: 2px;
+        }
+
+        .skills-tag-line {
+            font-size: 9.5pt;
+            color: #000000;
+            margin-top: 3px;
+            line-height: 1.38;
+        }
+
+        .skills-tag-line strong {
+            font-weight: 700;
+        }
+
+        /* ===== MULTI-COLUMN LISTS ===== */
+        .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px 14px;
+            padding-left: 20px;
+            list-style-type: disc;
+            margin-bottom: 6px;
+        }
+
+        .grid-3col li {
+            font-size: 9.5pt;
+            color: #000000;
+            line-height: 1.35;
+        }
+
+        .grid-4col {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3px 12px;
+            padding-left: 20px;
+            list-style-type: disc;
+            margin-bottom: 6px;
+        }
+
+        .grid-4col li {
+            font-size: 9.5pt;
+            color: #000000;
+            line-height: 1.35;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 16px;
+            padding-left: 20px;
+            list-style-type: disc;
+            margin-bottom: 6px;
+        }
+
+        .grid-2col li {
+            font-size: 9.5pt;
+            color: #000000;
+            line-height: 1.35;
+        }
+
+        /* ===== INLINE LIST ===== */
+        .inline-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 6px;
+        }
+
+        .inline-list li {
+            font-size: 9.5pt;
+            color: #000000;
+        }
+
+        /* ===== PROJECT ENTRIES ===== */
+        .project-block {
+            margin-bottom: 12px;
+        }
+
+        .project-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            margin-bottom: 1px;
+        }
+
+        .project-name {
+            font-size: 10pt;
+            font-weight: 700;
+            color: #000000;
+        }
+
+        .project-meta {
+            font-size: 9.5pt;
+            color: #333333;
+            margin-bottom: 3px;
+        }
+
+        .project-link {
+            color: #0066cc;
+            text-decoration: underline;
+            font-size: 9pt;
+            margin-left: 6px;
+        }
+
+        /* ===== FLOATING PRINT BUTTON ===== */
+        .print-btn {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #111827;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 9.5pt;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: all 0.2s ease;
+            z-index: 999;
+        }
+
+        .print-btn:hover {
+            background: #000000;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">
+        🖨️ Print / Save as PDF
+    </button>
+
+    <div class="cv-container">
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-top">
+                <span class="header-name">ABDUL WAHAB</span>
+                <span class="header-title">MECHANICAL DESIGN ENGINEER AND PRODUCT DESIGNER</span>
+            </div>
+            <div class="header-contact">
+                Islamabad, Pakistan | +92 318 3605425 | Future Plan: Autonomus vehicle systems | <a
+                    href="mailto:abdulwahabeng2023@gmail.com">abdulwahabeng2023@gmail.com</a><br>
+                LinkedIn: <a href="https://www.linkedin.com/in/abdul-wahab-4085b72b0/" target="_blank">abdul-wahab</a> |
+                Portfolio: <a href="https://wahababdull.github.io/my_portfolio/" target="_blank">my_portfolio</a> |
+                GitHub: <a href="https://github.com/WahabAbdull" target="_blank">WahabAbdull</a>
+            </div>
+        </header>
+
+        <!-- PROFILE / RESEARCH SUMMARY -->
+        <div class="profile-summary">
+            My name is Abdul Wahab, and I completed my Bachelor of Science (B.Sc.) in Mechanical Engineering from the University of Engineering and Technology (UET), Main Campus Peshawar. I am seeking to join graduate research team investigating Autonomous Vehicles (AVs), Advanced Driver-Assistance Systems (ADAS), and Connected Autonomous Vehicles (CAVs) that share data on the road to navigate safely. As a mechanical design engineer at Dysol (Pvt) Ltd, I collaborated with production teams to solve difficult manufacturing puzzles. For example, when a custom clamping manifold was too complex to machine as a single piece, we redesigned it into two symmetrical halves bolted together with four corner screws to make fabrication simple. My degree provided strong training in kinematics, dynamics, control theory, and 3D Computer-Aided Design (CAD). To connect physical mechanisms with intelligent software, I studied Python programming and Machine Learning (ML) through codanics.com to build simulators testing vehicle steering and emergency braking physics. I am ready to learn these advanced technology and to implement my skills, knowledge, and experience to design safer mobility systems for ground and aerial transportation.
+        </div>
+
+        <!-- RESEARCH INTERESTS -->
+        <div class="section-title">RESEARCH INTERESTS</div>
+        <ul class="grid-2col">
+            <li>Autonomous, Assisted, and Connected Vehicles (AV, CAV, and Unmanned Systems): self-driving cars, vehicles that help the driver stay safe, drones, and ground robots that talk to each other on the road</li>
+            <li>Vehicle Dynamics and Control Systems: the math and software that controls how fast a vehicle speeds up, brakes, and steers without crashing</li>
+            <li>Vehicle Design and Engineering: physically designing and building the mechanical parts of vehicles, from the frame to the internal mechanisms</li>
+        </ul>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+
+        <!-- Role 1: Freelance -->
+        <div class="entry">
+            <div class="entry-title">Mechanical Design Engineer | Freelance</div>
+            <div class="entry-date">August 2025 to Present</div>
+            <ul class="bullet-list">
+                <li>Took on paid engineering projects from international clients through freelance platforms and independent contracts, working remotely with clients from different countries.</li>
+                <li>Built 3D Computer-Aided Design (CAD) models, full assemblies, 2D technical drawings, and photorealistic renders, the kind of detailed visuals factories need to understand exactly how to build a product.</li>
+                <li>Designed parts for everyday consumer products and industrial machines, choosing the right materials and manufacturing methods to keep costs low and quality high.</li>
+                <li>Talked directly with clients to understand what they needed, made revisions based on their feedback, and delivered finished work on time, managing my own schedule as an independent professional.</li>
+                <li>Kept client satisfaction high through clear communication and reliable quality delivery.</li>
+                <li><strong>Skills:</strong> SolidWorks, 3D Computer-Aided Design (CAD) Modeling, 3D CAD Rendering, 2D Technical Drawing, Clear Communication, Detail-Oriented Design, Prototyping Support</li>
+            </ul>
+        </div>
+
+        <!-- Role 2: Dysol Pvt Ltd -->
+        <div class="entry">
+            <div class="entry-title">Mechanical Design Engineer | Dysol (Pvt) Ltd | Lahore, Pakistan</div>
+            <div class="entry-date">June 2026 to September 2026</div>
+            <ul class="bullet-list">
+                <li>Worked as a Mechanical Design Engineer in the Research &amp; Development (R&amp;D) department of a real company, designing actual medical devices and consumer products meant to be manufactured and sold.</li>
+                <li>Designed complex 3D parts from scratch in SolidWorks, then ran computer stress-tests using Finite Element Analysis (FEA), which is like a virtual crash test that shows exactly where a part will bend or break before you ever physically build it.</li>
+                <li>Applied Design for Manufacturing and Assembly (DFM/DFA) rules, which are a set of guidelines that make sure a part designed on a computer can actually be mass-produced in a factory without expensive problems or wasted material.</li>
+                <li>Worked with other engineering teams to test physical prototypes, check if manufactured parts matched the design specs, and fix production problems before products reached customers.</li>
+                <li><strong>Skills:</strong> SolidWorks, ANSYS (Finite Element Analysis (FEA) &amp; Computational Fluid Dynamics (CFD)), Altair EDEM, Design for Manufacturing and Assembly (DFM/DFA), Kinematic Simulation, Medical Devices, Quality Assurance</li>
+            </ul>
+        </div>
+
+        <!-- Role 3: Self-Employed -->
+        <div class="entry">
+            <div class="entry-title">Web and Application Developer, Applied Artificial Intelligence (AI) Enthusiast | Self-Employed |
+                Islamabad, Pakistan</div>
+            <div class="entry-date">June 2026 to Present</div>
+            <ul class="bullet-list">
+                <li>Built and deployed a live Artificial Intelligence (AI)-powered Research Assistant (Doc Agent) that lets users upload documents and ask questions, powered by Large Language Models (LLMs) like Google Gemini and OpenAI, accessed through private Application Programming Interface (API) keys.</li>
+                <li>Built fully functional, interactive web applications (like the Visual Keyword Cloud Generator) using Python and Streamlit, turning complex data analysis tasks into one-click tools anyone can use from a browser.</li>
+                <li>Programmed 2D animated driving simulators using Pygame, including a Kinematic Bicycle Model (a math model of how a real car steers) and a Pure Pursuit controller that steers a virtual Autonomous Vehicle (AV) along curved roads automatically.</li>
+                <li>Built a longitudinal control simulator implementing Adaptive Cruise Control (ACC) and Autonomous Emergency Braking (AEB) based on real-time Time-To-Collision (TTC) calculations, turning vehicle safety theory into working animated code.</li>
+                <li><strong>Skills:</strong> Python, Streamlit, Large Language Models (LLMs), Autonomous Vehicle (AV) Modeling, User Interface / User Experience (UI/UX) Design, Problem Solving</li>
+            </ul>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="section-title">EDUCATION</div>
+
+        <div class="entry">
+            <div class="entry-title">Bachelor of Science | University of Engineering and Technology, Peshawar | Khyber
+                Pakhtunkhwa, Pakistan</div>
+            <div class="entry-date">September 2019 to October 2023</div>
+            <ul class="bullet-list">
+                <li><strong>Field:</strong> Mechanical Engineering</li>
+                <li><strong>Supervisor:</strong> Professor Usman</li>
+                <li><strong>Final Project:</strong> Design and Fabrication of Mechanism for Automated Installation of 18
+                    Liter water bottle of Water Dispenser</li>
+                <li><strong>CGPA:</strong> 2.97 / 4.00</li>
+                <li><strong>Core Coursework:</strong> 3D Modeling, Machine Design, Thermodynamics, Engineering Design, which directly powered the design and fabrication work across all projects.</li>
+            </ul>
+        </div>
+
+        <div class="entry">
+            <div class="entry-title">Faculty of Science | WENSAM college, Dera Ismail Khan | Khyber Pakhtunkhwa,
+                Pakistan</div>
+            <div class="entry-date">September 2017 to June 2018</div>
+            <ul class="bullet-list">
+                <li><strong>Field:</strong> Pre-Engineering</li>
+                <li><strong>Marks:</strong> 886 / 1100</li>
+            </ul>
+        </div>
+
+        <!-- SKILLS & EXPERTISE -->
+        <div class="section-title">SKILLS &amp; EXPERTISE</div>
+        <ul class="grid-2col">
+            <li>Kinematic and Dynamic Motion Simulation</li>
+            <li>Vehicle Dynamics and Control</li>
+            <li>Python Programming</li>
+            <li>Streamlit Web Development</li>
+            <li>Artificial Intelligence (AI) and Machine Learning (ML)</li>
+            <li>SolidWorks (Certified CSWA)</li>
+            <li>3D Computer-Aided Design (CAD)</li>
+            <li>Design for Manufacturing and Assembly (DFM/DFA)</li>
+            <li>2D Technical Drawings and Tolerancing</li>
+            <li>ANSYS (Finite Element Analysis (FEA))</li>
+            <li>ANSYS (Computational Fluid Dynamics (CFD))</li>
+            <li>Altair EDEM (Particle Modeling)</li>
+            <li>Minitab (Statistical Quality Control)</li>
+        </ul>
+
+        <!-- PROJECTS -->
+        <div class="section-title">PROJECTS</div>
+
+        <!-- Project 1: AV Tracker -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">2D Autonomous Vehicle (AV) Path-Tracking Simulator</span>
+                <a href="https://github.com/WahabAbdull/av_tracker" target="_blank" class="project-link">View on GitHub
+                    ↗</a>
+            </div>
+            <div class="project-meta">Artificial Intelligence (AI) Mobility &amp; Control Systems | Python Simulation</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Built a live 2D animated screen where a virtual self-driving car steers itself along a winding S-shaped road, with no human touching the keyboard. You can watch it smoothly turn corners in real time.</li>
+                <li><strong>The Problem:</strong> Before putting a self-driving algorithm into a real car (which costs millions and is dangerous to test), engineers need a safe, cheap way to test whether the steering logic actually works across tricky curved roads.</li>
+                <li><strong>Kinematic Bicycle Model (How the Car Moves):</strong> Programmed a Kinematic Bicycle Model, a simplified math model that treats a 4-wheel car like a 2-wheel bicycle, to calculate how the car's body rotates and moves forward based on its current steering angle and speed each frame.</li>
+                <li><strong>Pure Pursuit Controller (The Steering Brain):</strong> Built a Pure Pursuit Path-Tracking Controller as the car's decision engine. It constantly looks ahead at a target point on the road ahead and calculates exactly how much to turn the front wheels to smoothly curve toward it. The faster the car goes, the farther ahead it looks.</li>
+                <li><strong>Live Telemetry Dashboard:</strong> Displayed a real-time on-screen dashboard inside the Pygame window showing live numbers: current speed, steering angle, and position, so you can read exactly what the Autonomous Vehicle (AV) control system is doing at any moment.</li>
+                <li><strong>Functions / Tools:</strong> Python, NumPy, Pygame, Kinematic Bicycle Modeling, Pure Pursuit Control Algorithm, Autonomous Vehicle (AV) Simulation.</li>
+            </ul>
+        </div>
+
+        <!-- Project 2: ACC & AEB -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Adaptive Cruise Control (ACC) &amp; Autonomous Emergency Braking (AEB) Simulator</span>
+                <a href="https://github.com/WahabAbdull/acc_simulation" target="_blank" class="project-link">View on
+                    GitHub ↗</a>
+            </div>
+            <div class="project-meta">Autonomous Vehicles &amp; Advanced Driver-Assistance Systems (ADAS) | Longitudinal Control</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Built a live 2D animated driving simulator in Python where two cars move on screen. The following car automatically adjusts its speed to stay at a safe distance behind a lead car, just like cruise control on a real highway.</li>
+                <li><strong>The Problem:</strong> Standard cruise control systems drive at a fixed speed; they cannot slow down when a car suddenly cuts in front or when traffic slows. That gap in safety logic causes rear-end crashes.</li>
+                <li><strong>Adaptive Gap Logic (ACC Brain):</strong> Programmed a speed-dependent following gap rule: the faster the car travels, the larger the required safety gap in front. The control algorithm constantly recalculates this gap every frame and adjusts throttle accordingly.</li>
+                <li><strong>Time-To-Collision (TTC) Emergency Braking:</strong> When the gap shrank to a danger threshold, the system calculated Time-To-Collision (TTC), which is the number of seconds until the cars would hit, and triggered Autonomous Emergency Braking (AEB). You can literally watch the car smoothly decelerate and stop on screen, frame by frame.</li>
+                <li><strong>Live Telemetry Dashboard:</strong> Built a real-time on-screen dashboard inside the Pygame window displaying live numbers for both cars' speeds, the gap distance between them, and current braking status, so you can read exactly what the system is doing at any moment.</li>
+                <li><strong>Functions / Tools:</strong> Python, Pygame, Advanced Driver-Assistance Systems (ADAS) Principles, Mathematical Modeling, Time-To-Collision (TTC) Logic, Collision Avoidance.</li>
+            </ul>
+        </div>
+
+        <!-- Project 3: Doc Agent -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Doc Agent, Artificial Intelligence (AI) Research Assistant</span>
+                <a href="https://doc-agent-use-me.streamlit.app/" target="_blank" class="project-link">View Live App ↗</a>
+            </div>
+            <div class="project-meta">Artificial Intelligence (AI) &amp; Research Automation | Document Analysis</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Built a live conversational web application inspired by Google NotebookLM that lets researchers upload long technical documents and ask questions to get instant, accurate answers.</li>
+                <li><strong>The Problem:</strong> Scientific papers and engineering reports are dozens of pages long. Searching through them manually takes hours, while typical chatbots often hallucinate fake facts or bogus citations.</li>
+                <li><strong>Dual-Provider Model Selection:</strong> Built a flexible Bring-Your-Own-Key (BYOK) system supporting both Google Gemini and OpenAI Large Language Models (LLMs), with a dropdown menu allowing users to switch models based on speed or reasoning needs.</li>
+                <li><strong>Strict Zero-Hallucination Guardrails:</strong> Programmed strict prompt instructions forcing the Artificial Intelligence (AI) to answer exclusively from the uploaded document, requiring it to state when information is missing rather than inventing answers.</li>
+                <li><strong>Memory Isolation &amp; Key Privacy:</strong> Maintained chat memory across questions while adding a "Clear History" button to prevent mixing up different papers. Application Programming Interface (API) keys are masked with dots in the User Interface (UI) and wiped from memory upon browser refresh so no private keys are ever stored on disk.</li>
+                <li><strong>Functions / Tools:</strong> Python, Streamlit, Large Language Models (LLMs), Google Gemini &amp; OpenAI Application Programming Interfaces (APIs), Document Parsing.</li>
+            </ul>
+        </div>
+
+        <!-- Project 4: Visual Keyword Cloud Generator -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Visual Keyword Cloud Generator</span>
+                <a href="https://featured-projects-words-cloud.streamlit.app/" target="_blank" class="project-link">View Live App ↗</a>
+            </div>
+            <div class="project-meta">Text Analytics &amp; Visualization | Natural Language Processing (NLP) Application</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Built and deployed a live Python web application that analyzes big blocks of text or uploaded documents and instantly turns them into visual word clouds and ranked frequency charts.</li>
+                <li><strong>The Problem:</strong> When reading long research papers or project reports, finding the main themes by hand takes forever, and simple word counters get clogged by useless filler words (like "the", "and", or "with").</li>
+                <li><strong>Custom Word Blacklist Filter:</strong> Added an interactive exclusion box in the User Interface (UI) where users can type any unwanted words or repetitive jargon to instantly erase them from the cloud in real time.</li>
+                <li><strong>Transparent Background &amp; Ranked Counts:</strong> Engineered custom visual controls allowing users to export graphics with transparent backgrounds using Red, Green, Blue, Alpha (RGBA) format to drop directly into slide decks, alongside an exact numerical bar chart showing how many times each top word appeared.</li>
+                <li><strong>Zero-Crash Fallback &amp; Cloud Deployment:</strong> Preloaded default engineering text so first-time visitors can test the app with zero clicks, and deployed it live 24/7 on Streamlit Community Cloud linked directly to a GitHub repository with Continuous Integration and Continuous Deployment (CI/CD).</li>
+                <li><strong>Functions / Tools:</strong> Python, Streamlit, WordCloud, Matplotlib, Natural Language Processing (NLP), GitHub Cloud Deployment (CI/CD).</li>
+            </ul>
+        </div>
+
+        <!-- Project 5: Flush-Driven Aerosol -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Flush-Driven Aerosol Mechanism (Zero-Power Automation)</span>
+            </div>
+            <div class="project-meta">Mechanical Automation | Sustainable Consumer Engineering</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Designed a completely battery-free air freshener that automatically sprays an aerosol can every time someone flushes an English commode.</li>
+                <li><strong>The Problem:</strong> Battery-powered air fresheners constantly run out of juice and often short-circuit in humid bathrooms, while manual spray cans are easily forgotten.</li>
+                <li><strong>Flexible Cable Transmission:</strong> Connected the toilet flush handle to the dispenser using a flexible, high-tensile bicycle clutch wire (Bowden cable), allowing it to bend around any toilet tank plumbing without rigid linkages binding.</li>
+                <li><strong>Seesaw Rocker Linkage (&gt;9N Threshold):</strong> Designed a first-class lever (seesaw rocker arm) inside a polypropylene box. When the flush lever pulls the cable up, the rocker arm pivots and pushes an actuator rod down with greater than 9 Newtons of force, ensuring it reliably overcomes the aerosol can's internal spring valve threshold.</li>
+                <li><strong>Non-Slip Grip &amp; Automatic Spring Reset:</strong> Added a high-friction neoprene rubber pad to the pressing rod so it grips the slick plastic spray button without slipping off. A high-carbon music-wire spring automatically pulls the rods and cable back to rest the moment the flush handle is released.</li>
+                <li><strong>Functions / Tools:</strong> SolidWorks (3D CAD, Assemblies &amp; BOM Drawings), Kinematic Leverage Design, Galvanized Sheet Metal, Spring Sizing, Anti-Corrosion DFM.</li>
+            </ul>
+        </div>
+
+        <!-- Project 6: CLI Sonic Toothbrush -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">CLI Sonic Toothbrush (Modular UV-C Sterilizing Travel Kit)</span>
+            </div>
+            <div class="project-meta">Sanitization Technology | Consumer Product Design</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Designed a pocket-sized electric toothbrush that sanitizes itself inside its own slide-on charging case using germ-killing UV-C light, powered by a built-in USB-C port.</li>
+                <li><strong>The Problem:</strong> When you pack a toothbrush in a damp bag or backpack, bacteria multiply like crazy on the wet bristles. Plus, regular electric toothbrushes create tons of plastic waste. When the bristles wear out, you have to throw away a whole plastic head and metal stem instead of just the bristles.</li>
+                <li><strong>Swappable Bristle Cartridge (Zero Plastic Waste):</strong> Instead of throwing away an entire head assembly, only the tiny bristle block snaps off and on. It connects using twin alignment pins modeled with a 1-degree mold angle and a tight friction fit (transition fit), strong enough to stay locked during brushing, but easy to pop off with your fingers when replacing.</li>
+                <li><strong>Friction-Slide Case (No Clunky Latches):</strong> The slim outer sleeve slides smoothly over the base tray like a phone case. Designed with a gentle 0.8-degree taper over a wide contact area, natural surface friction keeps it firmly closed inside a backpack so it never pops open accidentally.</li>
+                <li><strong>Sealed UV-C Sterilization Chamber:</strong> Built two 265nm UV-C LED lights into the base tray. When the opaque cover is fully closed, it creates a light-tight chamber where UV-C rays bounce off the walls to hit the bristles from all sides, killing 99.88% of bacteria with zero UV light leaking out to your eyes or skin.</li>
+                <li><strong>Functions / Tools:</strong> SolidWorks (3D Modeling &amp; Assemblies), Injection Molding DFM, Friction &amp; Transition Fit Design, UV-C Sanitization, USB-C Integration.</li>
+            </ul>
+        </div>
+
+        <!-- Project 7: Controlled Flow Mechanical System -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Medical Skin-Treatment Gas Wand (Controlled CO2 Flow System)</span>
+            </div>
+            <div class="project-meta">Medical Technology | Fluid &amp; Gas Management | ANSYS Simulation</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Engineered a handheld medical wand for skin treatments powered by an 88g CO2 cartridge containing gas pressurized to ~850 psi (about 25 times the pressure in a car tire).</li>
+                <li><strong>The Physics Problem:</strong> At 850 psi, tapping gas requires high mechanical force and airtight containment. Furthermore, when high-pressure gas expands, thermodynamics causes its temperature to plummet rapidly (Joule-Thomson effect), creating a risk of frostbite on human skin and freezing the doctor's fingers.</li>
+                <li><strong>Threaded Piercing &amp; Viton Seal:</strong> Designed a fine-threaded cartridge holder that gives the user the mechanical leverage to drive the canister onto a hollow piercing pin with side cross-bleed holes, locked airtight with a cold-resistant Viton seal to prevent blowout leaks.</li>
+                <li><strong>Pressure Regulation &amp; Expansion Chamber:</strong> Routed gas through a check valve into an expansion chamber that steps down the extreme pressure and stabilizes the gas temperature before it flows out through the treatment nozzle.</li>
+                <li><strong>ANSYS Two-Phase CFD &amp; Thermal Grip:</strong> Simulated liquid-to-gas phase change and choked flow (sonic gas velocity) in ANSYS CFD to prevent dry-ice crystal formation. Machined the manifold from surgical 316L stainless steel for burst protection, paired with an insulated rubber grip and spring-return trigger to protect the doctor's hand from cold conduction.</li>
+                <li><strong>Functions / Tools:</strong> SolidWorks 3D CAD, ANSYS CFD (Two-Phase Flow Simulation), 316L Stainless Steel, High-Pressure Seals (Viton), Medical DFM/DFA.</li>
+            </ul>
+        </div>
+
+        <!-- Project 8: Mechanical Dispensing System -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Mechanical Powder Dispenser (15g Single-Scoop Dispenser)</span>
+            </div>
+            <div class="project-meta">Fitness &amp; Consumer Products | Kinematic Design &amp; Simulation</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Created a handheld bottle that pours out an exact 15-gram scoop of workout protein powder every time you press a thumb button.</li>
+                <li><strong>The Problem:</strong> Protein powder is sticky and clumps up easily. When people try to make small dispensers, the powder gets stuck inside like a traffic jam, and powder dust gets between moving parts and jams the button.</li>
+                <li><strong>Smart Gear Trick:</strong> Designed a compound gear set so your thumb only needs to push a button 7 mm deep (a tiny press), and the gears multiply that movement into a big 40 mm slide to open the door fully. When you let go, a spring pulls the door shut.</li>
+                <li><strong>No-Jam Funnel &amp; Wiper:</strong> Shaped the powder chamber like a steep 55-degree slide so gravity pulls the powder down smoothly without clogging. Added a soft rubber wiper on the sliding door, just like a car windshield wiper, to sweep powder dust away so the parts never get stuck.</li>
+                <li><strong>Computer Testing &amp; Materials:</strong> Used computer simulation (Altair EDEM) to test how tiny 0.01 mm powder grains drop through the hole. Made the outside case from tough stainless steel sheet metal, and made the inside gears from quiet plastic so the button presses easily without noisy grinding.</li>
+                <li><strong>Functions / Tools:</strong> SolidWorks 3D Modeling, Altair EDEM (Powder Simulation), Gear Kinematics, Sheet Metal Design, Anti-Clog Design.</li>
+            </ul>
+        </div>
+
+        <!-- Project 9: Final Year Project -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Design and Fabrication of Mechanism for Automated Installation of 18-Liter
+                    Water Bottle</span>
+            </div>
+            <div class="project-meta">Final Year Project | UET Peshawar | January 2023 to March 2023</div>
+            <ul class="bullet-list">
+                <li><strong>Modeling/Development:</strong> Designed 3D CAD model, performed kinematic calculations, and
+                    fabricated a working prototype for automating heavy water bottle replacement.</li>
+                <li><strong>Problem:</strong> Manually lifting and inverting heavy 18-liter water bottles causes
+                    physical strain, spills, and potential injury.</li>
+                <li><strong>Solution:</strong> Built a customized mechanical lifting and guided inversion mechanism that
+                    smoothly loads the bottle onto the dispenser.</li>
+                <li><strong>Benefits:</strong> Drastically reduces human effort, automates bottle alignment, and
+                    improves workplace safety.</li>
+                <li><strong>Functions / Tools:</strong> SolidWorks CAD, Fabrication, Machine Design, Linkages, Kinematic
+                    Optimization.</li>
+            </ul>
+        </div>
+
+        <!-- Project 10: Mixture Machine -->
+        <div class="project-block">
+            <div class="project-header-row">
+                <span class="project-name">Modular Cordless Blender (Single-Serve Portable Mixer)</span>
+            </div>
+            <div class="project-meta">Consumer Product Design | SolidWorks Modeling &amp; DFM</div>
+            <ul class="bullet-list">
+                <li><strong>What It Does:</strong> Designed a cordless, rechargeable personal smoothie blender powered by an 18V motor that you can charge with a USB-C phone cable and pack in a bag.</li>
+                <li><strong>The Problem:</strong> Big kitchen blenders are heavy, take up half the counter, and are a pain to clean because food gets trapped under fixed blades at the bottom of the pitcher.</li>
+                <li><strong>High-Speed Blade Safety (Interference Fit):</strong> The 4-fin stainless steel blade spins up to 20,000 RPM (faster than a race car engine!). To make sure that intense spinning torque never shakes the blade loose, it is permanently press-fit onto the motor drive shaft, protecting your hands from loose, razor-sharp blades.</li>
+                <li><strong>Leak-Proof Glass Bottle:</strong> The glass jar screws directly into the base with molded internal threads and a circular food-grade silicone seal, keeping high-speed smoothie vortexes from leaking down into the motor and battery.</li>
+                <li><strong>Compact 40% Smaller Body:</strong> Modeled simple 3D spacer boxes for the 18V motor and 2000 mAh battery in SolidWorks to pack everything into a 40% smaller frame, controlled by a simple 4-speed push button (Low &rarr; Medium &rarr; High &rarr; OFF).</li>
+                <li><strong>Functions / Tools:</strong> SolidWorks 3D Modeling (Lofts, Sweeps &amp; Assemblies), Interference Fit Tolerancing, DFM/DFA, Exploded Views.</li>
+            </ul>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="section-title">LANGUAGES</div>
+        <ul class="inline-list">
+            <li>English (Proficient / Professional)</li>
+            <li>Urdu (Fluent)</li>
+            <li>Seraiki (Native)</li>
+        </ul>
+
+        <!-- CERTIFICATIONS -->
+        <div class="section-title">CERTIFICATIONS</div>
+        <ul class="bullet-list">
+            <li>Pakistan Engineering Council (PEC), Registered Engineer</li>
+            <li>Certified SOLIDWORKS Associate (CSWA), Dassault Systèmes</li>
+            <li>IELTS Academic, Band 6.0 (Listening, Reading, Writing, Speaking)</li>
+            <li>Python and Machine Learning, codanics.com</li>
+            <li>ABC of Statistics, codanics.com</li>
+            <li>AI ka Chilla 2026, codanics.com</li>
+            <li>Lean Six Sigma Yellow Belt (LSSYB) and White Belt (LSSWB), udemy.com</li>
+            <li>Introduction to Minitab, simplilearn.com</li>
+            <li>CPR, AED and FIRST AID, alison.com</li>
+        </ul>
+
+        <!-- REFERENCES -->
+        <div class="section-title">REFERENCES</div>
+
+        <div class="entry">
+            <ul class="bullet-list">
+                <li><strong>Professor Dr. Naveed Ahmad</strong>
+                    <ul class="nested-list">
+                        <li>Assistant Professor, Department of Mechanical Engineering, UET Peshawar, Khyber Pakhtunkhwa,
+                            Pakistan</li>
+                        <li>Email: <a href="mailto:naveed@uetpeshawar.edu.pk"
+                                style="color: #0066cc;">naveed@uetpeshawar.edu.pk</a></li>
+                        <li>Phone: +92 92167968</li>
+                    </ul>
+                </li>
+                <li><strong>Dr. M. Sadiq Khattak</strong>
+                    <ul class="nested-list">
+                        <li>UET Peshawar, Khyber Pakhtunkhwa, Pakistan</li>
+                        <li>Email: <a href="mailto:sadiqkhattak@uetpeshawar.edu.pk"
+                                style="color: #0066cc;">sadiqkhattak@uetpeshawar.edu.pk</a> | <a
+                                href="mailto:vc@uetpeshawar.edu.pk" style="color: #0066cc;">vc@uetpeshawar.edu.pk</a>
+                        </li>
+                        <li>Phone: Office: +91-91-9222217</li>
+                    </ul>
+                </li>
+                <li><strong>Professor Muhammad Alam Zaib Khan</strong>
+                    <ul class="nested-list">
+                        <li>Assistant Professor, Department of Mechanical Engineering, UET Peshawar, Khyber Pakhtunkhwa,
+                            Pakistan</li>
+                        <li>Email: <a href="mailto:alamzaibkhan@uetpeshwar.edu.pk"
+                                style="color: #0066cc;">alamzaibkhan@uetpeshwar.edu.pk</a></li>
+                        <li>Phone: +92 3329368952</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
